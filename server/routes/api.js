@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-router.use('/librarys', require('./librarys'));
+router.use('/contactlist', require('./contactlist'));
 
 
 module.exports = router;

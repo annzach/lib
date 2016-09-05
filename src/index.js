@@ -1,16 +1,20 @@
 import React from 'react';
 import { render } from 'react-dom';
+import {Provider} from 'react-redux'
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
-import Registration from './components/Registration'
-import Main from './components/Main'
-import SearchPage from './components/SearchPage'
+import Layout from './components/Layout'
+import ContactPage from './components/ContactPage'
+import ContactList from './components/ContactList'
+import store from './store'
 
 render(
+  <Provider store ={store}>
   <Router history ={browserHistory}>
-  <Route path='/' component = {Main}>
-   <Route path ='Registration' component ={Registration}/>
-    <Route path ='searchpage' component ={SearchPage}/>
+   <Route path = '/' component = {Layout}>
+   <Route path = '/contactpage' component = {ContactPage}/>
+   <Route path = '/contactlist' component = {ContactList}/>
    </Route>
-   </Router>,
+   </Router>
+   </Provider>,
   document.getElementById('root')
 );
